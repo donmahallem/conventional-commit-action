@@ -5,7 +5,7 @@
 
 import * as actionscore from '@actions/core';
 import changelog from 'conventional-changelog-core';
-import { Readable } from 'stream';
+import { streamToString } from './stream-to-string';
 
 const releaseCountInput: string | undefined = actionscore.getInput('releaseCount', {
     required: false,
@@ -16,24 +16,6 @@ const skipUnstableInput: boolean =
         required: false,
         trimWhitespace: true,
     }) || false;
-/**
- * @param stream
- */
-async function streamToString(stream: Readable): Promise<string> {
-    return new Promise<string>((resolve: (val: string) => void, reject: (err: any) => void) => {
-        const chunks: Buffer[] = [];
-        stream.on('data', (chunk: Buffer): void => {
-            chunks.push(chunk);
-        });
-        stream.on('error', (err: any): void => {
-            reject(err);
-        });
-        stream.on('end', (): void => {
-            resolve(Buffer.concat(chunks).toString('utf-8'));
-        });
-    });
-}
-
 /**
  *
  */

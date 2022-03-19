@@ -1,16 +1,16 @@
 name: 'Label Lerna PR'
-description: "Label Pull Request based on lerna labels"
+description: 'Label Pull Request based on lerna labels'
 inputs:
-  github_secret:  # id of input
-    description: 'List of valid labels'
-    required: true
-  prefix:  # id of input
-    description: 'Prefix for labels'
-    required: false
-    default: 'pkg'
+    skipUnstable: # id of input
+        description: 'Skip unstable release'
+        required: true
+        default: false
+    releaseCount: # id of input
+        description: 'Number of releases to include'
+        required: false
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+    using: 'docker'
+    image: 'Dockerfile'
 branding:
-  icon: 'bookmark'
-  color: 'orange'
+    icon: 'bookmark'
+    color: 'orange'
