@@ -30,7 +30,7 @@ jobs:
                   verbose: false
             - name: Test Current
               id: test-run
-              uses: .
+              uses: ./
             - name: Output Data
               run: echo "${{ steps.test-run.outputs.changelog }}"
     test_project_docker:
