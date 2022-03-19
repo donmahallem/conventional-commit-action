@@ -1,0 +1,16 @@
+name: 'Label Lerna PR'
+description: 'Label Pull Request based on lerna labels'
+inputs:
+    skipUnstable: # id of input
+        description: 'Skip unstable release'
+        required: true
+        default: false
+    releaseCount: # id of input
+        description: 'Number of releases to include'
+        required: false
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+branding:
+    icon: 'bookmark'
+    color: 'orange'
