@@ -1,6 +1,6 @@
 /*
- * Package @donmahallem/lerna-label
- * Source https://github.com/donmahallem/lerna-label/
+ * Package @donmahallem/conventional-commit-action
+ * Source https://github.com/donmahallem/conventional-commit-action/
  */
 
 import { expect } from 'chai';
