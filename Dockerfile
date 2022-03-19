@@ -26,4 +26,4 @@ RUN npm ci --production && \
     npm cache clean --force
 
 USER node
-ENTRYPOINT ["node", "./dist/index.js"]
+ENTRYPOINT ["node", "/usr/src/app/dist/index.js"]
